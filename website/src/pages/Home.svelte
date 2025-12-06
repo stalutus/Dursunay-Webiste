@@ -7,41 +7,57 @@
 <div in:fade={{ duration: 800 }}>
     <!-- Hero Section -->
     <section
-        class="min-h-screen flex flex-col justify-center items-center bg-gradient-to-b from-accent via-primary/10 to-white relative overflow-hidden pt-20"
+        class="min-h-screen flex flex-col justify-center items-center bg-gradient-to-b from-accent via-primary/5 to-white relative overflow-hidden pt-20"
     >
-        <!-- Soft Background Blobs -->
-        <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-            <div
-                class="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-primary/20 rounded-full blur-[100px] animate-pulse"
-            ></div>
-            <div
-                class="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-secondary/20 rounded-full blur-[120px] animate-breathe"
-            ></div>
-        </div>
-
+        <!-- Background Lotus (Creative Centerpiece) -->
         <div
-            class="z-10 flex flex-col items-center text-center px-4 max-w-5xl mx-auto"
+            class="absolute inset-0 flex items-center justify-center z-0 pointer-events-none opacity-[0.15]"
         >
             <div
-                class="mb-10 transform hover:scale-105 transition-transform duration-[2000ms] ease-out"
+                class="w-[500px] h-[500px] md:w-[700px] md:h-[700px] animate-pulse-slow"
             >
                 <Lotus />
             </div>
+        </div>
+
+        <!-- Content Content -->
+        <div
+            class="z-10 flex flex-col items-center text-center px-4 max-w-5xl mx-auto"
+        >
+            <!-- Dum Spiro Spero (New Creative Element) -->
+            <div class="mb-8" in:fade={{ duration: 1500, delay: 200 }}>
+                <h2
+                    class="font-serif italic text-6xl md:text-8xl text-primary-dark/80 tracking-wide drop-shadow-sm"
+                >
+                    Dum Spiro Spero
+                </h2>
+                <p
+                    class="font-sans text-sm md:text-base text-text/60 uppercase tracking-[0.3em] mt-4"
+                >
+                    Nefes Aldığım Sürece Umut Ediyorum
+                </p>
+            </div>
+
+            <!-- Divider -->
+            <div
+                class="w-24 h-[1px] bg-gradient-to-r from-transparent via-text/20 to-transparent mb-10"
+                in:fade={{ delay: 500 }}
+            ></div>
 
             <h1
-                class="font-serif text-4xl sm:text-5xl md:text-7xl text-text mb-6 tracking-tight leading-tight drop-shadow-sm"
-                in:fly={{ y: 30, duration: 1200, delay: 200 }}
+                class="font-serif text-3xl sm:text-4xl md:text-5xl text-text mb-6 tracking-tight leading-tight drop-shadow-sm"
+                in:fly={{ y: 30, duration: 1200, delay: 400 }}
             >
                 Nefesinle Özüne Dön.<br />
                 <span
-                    class="text-primary-dark font-normal italic text-2xl sm:text-3xl md:text-5xl mt-3 block"
+                    class="text-primary-dark font-normal italic text-xl sm:text-2xl md:text-3xl mt-3 block"
                     >Bütünleyici Dönüşüm Koçluğu.</span
                 >
             </h1>
 
             <p
                 class="font-sans text-lg md:text-xl text-text/70 mb-12 max-w-2xl font-light leading-relaxed"
-                in:fly={{ y: 30, duration: 1200, delay: 400 }}
+                in:fly={{ y: 30, duration: 1200, delay: 600 }}
             >
                 Yaşam enerjisi ve dengenin kaynağına, kendi nefesine yolculuk
                 yap. İçindeki potansiyeli açığa çıkar ve huzuru keşfet.
@@ -49,7 +65,7 @@
 
             <div
                 class="flex flex-col sm:flex-row gap-5"
-                in:fly={{ y: 30, duration: 1200, delay: 600 }}
+                in:fly={{ y: 30, duration: 1200, delay: 800 }}
             >
                 <Link
                     to="/hizmetler"
@@ -68,7 +84,7 @@
 
         <div class="absolute bottom-10 animate-bounce text-text/30">
             <svg
-                class="w-8 h-8"
+                class="w-6 h-6"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"

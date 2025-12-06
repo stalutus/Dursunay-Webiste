@@ -1,5 +1,5 @@
 <div
-    class="lotus-container w-64 h-64 flex justify-center items-center relative opacity-90"
+    class="lotus-container w-full h-full flex justify-center items-center relative opacity-90"
 >
     <!-- SVG Lotus: Symmetrical and Scalable -->
     <svg
