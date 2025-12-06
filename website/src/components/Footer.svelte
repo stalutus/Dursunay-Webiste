@@ -56,7 +56,7 @@
                     <span>📧</span> info@dursunaydemir.com
                 </li>
                 <li class="flex items-center gap-2">
-                    <span>📍</span> Edirne Merkez
+                    <span>📍</span> Edirne, Merkez
                 </li>
                 <li class="flex items-center gap-4 mt-4">
                     <!-- Social Placeholders -->
