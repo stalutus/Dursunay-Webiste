@@ -1,39 +1,81 @@
 <div
-    class="lotus-container flex justify-center items-center relative w-64 h-64"
+    class="lotus-container w-64 h-64 flex justify-center items-center relative opacity-90"
 >
-    <!-- Glowing Center -->
+    <!-- SVG Lotus: Symmetrical and Scalable -->
+    <svg
+        viewBox="0 0 200 200"
+        class="w-full h-full animate-[spin_60s_linear_infinite]"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+    >
+        <defs>
+            <linearGradient
+                id="petalGradient"
+                x1="100"
+                y1="100"
+                x2="100"
+                y2="0"
+                gradientUnits="userSpaceOnUse"
+            >
+                <stop stop-color="#F2D7D5" stop-opacity="0.8" />
+                <stop offset="1" stop-color="#FAF9F6" stop-opacity="0.2" />
+            </linearGradient>
+            <linearGradient
+                id="centerGradient"
+                x1="0"
+                y1="0"
+                x2="100"
+                y2="100"
+                gradientUnits="userSpaceOnUse"
+            >
+                <stop stop-color="#F2D7D5" />
+                <stop offset="1" stop-color="#D1F2EB" />
+            </linearGradient>
+        </defs>
+
+        <!-- Breathing Group -->
+        <g class="origin-center animate-[breathe_8s_ease-in-out_infinite]">
+            <!-- Center Core -->
+            <circle
+                cx="100"
+                cy="100"
+                r="15"
+                fill="url(#centerGradient)"
+                class="blur-sm animate-pulse"
+            />
+
+            <!-- Petals Layer 1 (6 Petals) -->
+            <g class="opacity-90">
+                {#each [0, 60, 120, 180, 240, 300] as angle}
+                    <ellipse
+                        cx="100"
+                        cy="100"
+                        rx="15"
+                        ry="40"
+                        fill="url(#petalGradient)"
+                        transform="rotate({angle}, 100, 100) translate(0, -25)"
+                    />
+                {/each}
+            </g>
+
+            <!-- Petals Layer 2 (6 Petals, Rotated) -->
+            <g class="opacity-70 scale-110 origin-center">
+                {#each [30, 90, 150, 210, 270, 330] as angle}
+                    <ellipse
+                        cx="100"
+                        cy="100"
+                        rx="12"
+                        ry="35"
+                        fill="url(#petalGradient)"
+                        transform="rotate({angle}, 100, 100) translate(0, -20)"
+                    />
+                {/each}
+            </g>
+        </g>
+    </svg>
+
+    <!-- Outer Glow -->
     <div
-        class="absolute w-20 h-20 bg-gradient-to-tr from-primary-dark to-primary opacity-60 rounded-full blur-md animate-breathe z-20 shadow-[0_0_30px_rgba(242,215,213,0.6)]"
+        class="absolute inset-0 bg-primary/20 rounded-full blur-3xl animate-pulse pointer-events-none z-[-1]"
     ></div>
-
-    <!-- Core Petals (Tighter) -->
-    <div
-        class="petal-layer absolute w-full h-full animate-[spin_30s_linear_infinite]"
-    >
-        {#each Array(6) as _, i}
-            <div
-                class="petal absolute top-6 left-1/2 -translate-x-1/2 w-10 h-20 bg-gradient-to-b from-primary/80 to-accent/20 rounded-[100%_100%_20%_20%] origin-bottom transform shadow-sm"
-                style="transform: rotate({i * 60}deg) translateY(-10px);"
-            ></div>
-        {/each}
-    </div>
-
-    <!-- Outer Petals (Larger, Breathing) -->
-    <div
-        class="petal-layer absolute w-full h-full scale-110 opacity-70 animate-[breathe_8s_ease-in-out_infinite]"
-    >
-        {#each Array(8) as _, i}
-            <div
-                class="petal absolute top-2 left-1/2 -translate-x-1/2 w-12 h-24 bg-gradient-to-b from-secondary/60 to-white/10 rounded-[100%_100%_0%_0%] origin-bottom transform backdrop-blur-sm border border-white/20"
-                style="transform: rotate({i * 45}deg) translateY(-5px);"
-            ></div>
-        {/each}
-    </div>
 </div>
-
-<style>
-    .petal {
-        /* Subtle transparency/blend for watercolor effect */
-        mix-blend-mode: normal;
-    }
-</style>

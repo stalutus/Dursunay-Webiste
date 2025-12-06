@@ -29,12 +29,12 @@
             </div>
 
             <h1
-                class="font-serif text-5xl md:text-7xl text-text mb-6 tracking-tight leading-tight drop-shadow-sm"
+                class="font-serif text-4xl sm:text-5xl md:text-7xl text-text mb-6 tracking-tight leading-tight drop-shadow-sm"
                 in:fly={{ y: 30, duration: 1200, delay: 200 }}
             >
                 Nefesinle Özüne Dön.<br />
                 <span
-                    class="text-primary-dark font-normal italic text-4xl md:text-5xl mt-2 block"
+                    class="text-primary-dark font-normal italic text-2xl sm:text-3xl md:text-5xl mt-3 block"
                     >Bütünleyici Dönüşüm Koçluğu.</span
                 >
             </h1>
